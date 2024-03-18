@@ -33,7 +33,6 @@ class YandexDiskClient:
     """
     Класс для работы с Яндекс.Диск API
     В нём мы загружаем на Яндекс.Диск фотографии профиля пользователя
-    А так-же создаём нужную папку
     """
     API_BASE_URL = 'https://cloud-api.yandex.net/v1/disk/resources'
 
@@ -66,7 +65,7 @@ def main(vk_access_token, yandex_access_token, vk_user_id):
     yandex_client = YandexDiskClient(yandex_access_token)
     photos = vk_client.get_photos(vk_user_id)
 
-    yandex_folder_name = 'VK_Backup'
+    yandex_folder_name = 'VK_Backup'  # Создаём нужную папку
     yandex_client.create_folder(yandex_folder_name)
 
     uploaded_photos = []
